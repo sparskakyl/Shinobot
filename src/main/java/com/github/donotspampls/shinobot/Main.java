@@ -13,7 +13,7 @@ public class Main {
     private static final String OWO_GENERAL = "256993540523950101";
 
     public static void main(String[] args) {
-        DiscordApi api = new DiscordApiBuilder().setToken("TOKEN").login().join();
+        DiscordApi api = new DiscordApiBuilder().setToken(args[0]).login().join();
         api.updateActivity("Asa's money offers", ActivityType.LISTENING);
         System.out.println("Logged in to Discord account: " + api.getYourself().getDiscriminatedName());
         api.addMessageCreateListener(Main::onMessageCreateListener);
