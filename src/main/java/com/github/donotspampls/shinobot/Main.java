@@ -23,9 +23,9 @@ public class Main {
         TextChannel channel = ev.getChannel();
         DiscordApi api = ev.getApi();
         MessageAuthor user = ev.getMessage().getAuthor();
+        String msg = ev.getMessage().getContent();
 
-        if (channel.getIdAsString().equalsIgnoreCase(RLME_ANNOUNCEMENTS) && user.getIdAsString().equals("420272844757270538")) {
-            String msg = ev.getMessage().getContent();
+        if (channel.getIdAsString().equalsIgnoreCase(RLME_ANNOUNCEMENTS) && user.getIdAsString().equals("420272844757270538") && msg.contains("@everyone")) {
             api.getChannelById(OWO_GENERAL).ifPresent(owo -> owo.asServerTextChannel().ifPresent(general -> general.updateTopic(msg)));
         }
     }
