@@ -27,7 +27,7 @@ public class Main {
         String pmsg = "Oooh, new announcements from RLME! This announcement said: ```" + msg + "```";
 
         if (channel.getIdAsString().equalsIgnoreCase(RLME_ANNOUNCEMENTS) && user.getIdAsString().equals("420272844757270538") && msg.contains("@everyone")) {
-            api.getChannelById(OWO_GENERAL).ifPresent(owo -> owo.asServerTextChannel().ifPresent(general -> general.updateTopic(msg)));
+            api.getChannelById(OWO_GENERAL).ifPresent(owo -> owo.asServerTextChannel().ifPresent(general -> general.updateTopic(pmsg)));
         }
     }
 
